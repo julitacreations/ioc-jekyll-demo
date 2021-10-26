@@ -1,26 +1,33 @@
 ---
 layout: default
 title: Homepage
-fruit:
- - title: Strawberry
-   description: This is a beautiful fruit
- - title: Cherry
-   description: This is a sexy fruit
- - title: Pineapple
-   description: This is a tropical fruit
- - title: Apple
-   description: This is a round fruit
+info:
+ - title: HTML & CSS
+   skill: Coding
+ - title: Social Foundations
+   skill: Instagram
+ - title: Mobile & DSLR
+   skill: Photography
 ---
 
 <section> This is specific page content only </section>
 <h1>Welcome to your homepage!</h1>
 
-<section>
-    {% for item in page.fruit %}
-    <div class="card">
-        <h2> {{item.title}} </h2>
-        <p> {{item.description}} </p>
+<section class="center padded mob-padded-0">
+  <h2> Upcoming Challenges</h2>
+
+  {% for item in page.info %}
+  <div class="grid horizontal-scroll"> 
+    <!--Card one -->
+    <div class="col-4_xs-11 padded-05">
+      <div class="card bg-yellow">
+        <h3> {{item.skill}} <br> Challenge </h3>
+        <h4> {{item.title}} </h4>
+        <img src="https://www.instituteofcode.com/assets/images/cutout-3.png">
+      </div>
     </div>
-    {% endfor %}
+  </div>
+  {% endfor %}
+
 
 </section>
