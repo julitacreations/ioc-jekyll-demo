@@ -1,7 +1,26 @@
 ---
 layout: default
 title: Homepage
+fruit:
+ - title: Strawberry
+   description: This is a beautiful fruit
+ - title: Cherry
+   description: This is a sexy fruit
+ - title: Pineapple
+   description: This is a tropical fruit
+ - title: Apple
+   description: This is a round fruit
 ---
 
 <section> This is specific page content only </section>
 <h1>Welcome to your homepage!</h1>
+
+<section>
+    {% for item in page.fruit %}
+    <div class="card">
+        <h2> {{item.title}} </h2>
+        <p> {{item.description}} </p>
+    </div>
+    {% endfor %}
+
+</section>
